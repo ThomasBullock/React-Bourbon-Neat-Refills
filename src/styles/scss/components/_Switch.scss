@@ -23,7 +23,7 @@
     display: none;
 
     &:checked {
-      + .checkbox {
+      + .switch__checkbox {
         background: $action-color;
 
         &::before {

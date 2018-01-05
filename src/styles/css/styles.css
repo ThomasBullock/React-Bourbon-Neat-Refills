@@ -201,6 +201,9 @@ hr {
 /* ================================= 
   BEM create element / modifier 
 ==================================== */
+/* ================================= 
+  COLOURS (Thats right not colors!)
+==================================== */
 .switch {
   border-radius: 32px;
   cursor: pointer;
@@ -210,11 +213,11 @@ hr {
   width: 52px; }
   .switch__input {
     display: none; }
-    .switch__input:checked + .checkbox {
+    .switch__input:checked + .switch__checkbox {
       background: #1565c0; }
-      .switch__input:checked + .checkbox::before {
+      .switch__input:checked + .switch__checkbox::before {
         transform: scale(0); }
-      .switch__input:checked + .checkbox::after {
+      .switch__input:checked + .switch__checkbox::after {
         left: 22px; }
   .switch__checkbox {
     background: #e8e8e8;
@@ -287,3 +290,174 @@ hr {
     margin: 0; }
   .off-canvas li {
     list-style: none; }
+
+.fade-screen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: black;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+  z-index: 999998; }
+  .fade-screen--visible {
+    opacity: 0.4;
+    visibility: visible; }
+
+.search-bar {
+  position: relative; }
+  .search-bar__input {
+    appearance: none;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1em;
+    font-style: italic;
+    margin: 0;
+    padding: 0.5em 0.5em;
+    position: relative;
+    transition: border-color;
+    width: 100%; }
+  .search-bar__btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    outline: none;
+    padding: 5px 10px; }
+    .search-bar__btn img {
+      height: 12px;
+      opacity: 0.7; }
+
+.vertical {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 100;
+  padding: calc(3% + 50px) 4%; }
+  .vertical__nav {
+    display: table;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  .vertical__item {
+    padding: 11px;
+    fill: #333333;
+    display: block;
+    cursor: pointer;
+    position: relative; }
+    .vertical__item::after {
+      border-color: #333333;
+      border-style: solid;
+      border-width: 2px;
+      background-color: transparent;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      content: "";
+      display: block;
+      width: 15px;
+      height: 15px;
+      border-radius: 7px;
+      opacity: 0.5;
+      background: #fff;
+      box-shadow: 0 0 1px #303030; }
+    .vertical__item--selected::after {
+      background: #AAAAAA;
+      opacity: 1; }
+
+.fullpage {
+  width: 100vw;
+  height: 100vw;
+  background: #629aa9; }
+
+.navigation {
+  background-color: #333;
+  border-bottom: 1px solid #1a1a1a;
+  min-height: 60px;
+  width: 100%;
+  z-index: 999; }
+  .navigation__wrapper {
+    position: relative;
+    z-index: 9999; }
+    .navigation__wrapper::after {
+      clear: both;
+      content: "";
+      display: block; }
+  .navigation__logo {
+    float: left;
+    max-height: 60px;
+    padding-left: 1em;
+    padding-right: 2em; }
+    .navigation__logo img {
+      max-height: 60px;
+      padding: 0.8em 0; }
+  .navigation__menu-button {
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    float: right;
+    line-height: 60px;
+    margin: 0;
+    padding-right: 1em;
+    text-decoration: none;
+    text-transform: uppercase; }
+    .navigation__menu-button:focus, .navigation__menu-button:hover {
+      color: white; }
+  .navigation__submenu {
+    display: none;
+    padding-left: 0; }
+    .navigation__submenu li {
+      display: block;
+      padding-right: 0; }
+      .navigation__submenu li a {
+        background-color: #2b2b2b;
+        display: inline-block;
+        text-align: right;
+        width: 100%; }
+  .navigation__menu {
+    clear: both;
+    display: none;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+    z-index: 9999; }
+    .navigation__menu.show {
+      display: block; }
+  .navigation__link {
+    background: #333;
+    display: block;
+    line-height: 60px;
+    overflow: hidden;
+    padding-right: 0.8em;
+    text-align: right;
+    width: 100%;
+    z-index: 9999; }
+    .navigation__link a {
+      color: rgba(255, 255, 255, 0.7);
+      display: inline-block;
+      text-decoration: none; }
+      .navigation__link a:focus, .navigation__link a:hover {
+        color: white; }
+    .navigation__link--more {
+      padding-right: 0; }
+      .navigation__link--more > ul > li:first-child a {
+        padding-top: 1em; }
+      .navigation__link--more a {
+        margin-right: 1em; }
+      .navigation__link--more > a {
+        padding-right: 0.6em; }
+      .navigation__link--more > a::after {
+        position: absolute;
+        top: auto;
+        right: -0.4em;
+        bottom: auto;
+        left: auto;
+        color: rgba(255, 255, 255, 0.7);
+        content: "\25BE"; }

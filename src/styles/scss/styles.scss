@@ -6,5 +6,12 @@
 
 @import './mixins/BEM';
 
+@import './settings/variables';
+
 @import './components/Switch';
 @import './components/Off-Canvas';
+@import './components/FadeScreen';
+@import './components/SearchBar';
+@import './components/Vertical-Nav';
+@import './components/FullPageSection';
+@import './components/Navigation';
