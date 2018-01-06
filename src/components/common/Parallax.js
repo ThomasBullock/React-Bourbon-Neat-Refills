@@ -1,4 +1,6 @@
-const Paralax = (image) => {
+import React from 'react';
+
+const Parallax = (image) => {
 	return(
 		<div id="js-parallax-window" className="parallax">
 		  <div className="parallax__static">
@@ -8,3 +10,5 @@ const Paralax = (image) => {
 		</div>
 	)
 }
+
+export { Parallax }

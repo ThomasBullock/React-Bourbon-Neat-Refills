@@ -461,3 +461,38 @@ hr {
         left: auto;
         color: rgba(255, 255, 255, 0.7);
         content: "\25BE"; }
+
+.accordion-tabs {
+  line-height: 1.5;
+  margin-bottom: 1.5em;
+  padding: 0; }
+  .accordion-tabs::after {
+    clear: both;
+    content: "";
+    display: block; }
+  .accordion-tabs__item {
+    list-style: none; }
+    .accordion-tabs__item:first-child .tab-link {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px; }
+  .accordion-tabs__link {
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    color: #333;
+    display: block;
+    font-weight: bold;
+    padding: 0.75em;
+    text-decoration: none; }
+    .accordion-tabs__link:hover {
+      color: #1565c0; }
+    .accordion-tabs__link:focus {
+      outline: none; }
+    .accordion-tabs__link--active {
+      background-color: #f7f7f7; }
+      .accordion-tabs__link--active + .accordion-tabs__content {
+        display: flex; }
+  .accordion-tabs__content {
+    background: #f7f7f7;
+    display: none;
+    padding: 1.5em;
+    width: 100%; }

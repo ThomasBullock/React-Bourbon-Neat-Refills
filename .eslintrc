@@ -1,0 +1,20 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-indent": 0,
+    "semi": 1,
+    "import": 0,
+    "indent": [2, "tab"],
+    "no-unused-vars": [1, { "argsIgnorePattern": "res|req|^err"}],
+    "no-tabs": 0,
+    "no-console": 0,
+    "arrow-body-style": [2, "as-needed"],
+  }
+}

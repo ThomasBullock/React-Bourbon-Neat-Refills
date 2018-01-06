@@ -5,8 +5,8 @@ import SearchBar from './SearchBar';
 class OffCanvas extends Component {
 	render() {
 		// console.log(this.props)
-		const canvasClasses = (this.props.visible) ? `off-canvas off-canvas--visible` : `off-canvas`;
-		return(
+		const canvasClasses = (this.props.visible) ? 'off-canvas off-canvas--visible' : 'off-canvas';
+		return (
 			<nav className={canvasClasses}>
 				<SearchBar />
 			  <ul>
@@ -15,8 +15,9 @@ class OffCanvas extends Component {
 			    <li><Link className="off-canvas__link" to="javascript:void(0)">Item 3</Link></li>
 			  </ul>
 			</nav>
-		)
+		);
 	}
-} 
+}
 
-export default OffCanvas;
+export { OffCanvas };
+
