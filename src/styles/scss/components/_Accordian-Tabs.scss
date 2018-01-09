@@ -23,13 +23,18 @@
   //   border: $tab-border;
   //   border-radius: $base-border-radius;
   // }
+  @include grid-media($desktop--grid) {
+    border: $tab-border;
+    border-radius: $base-border-radius;    
+  }
+
 
   @include elem('item') {
     list-style: none;
 
-    // @include media($tab-mode) {
-    //   display: inline;
-    // }
+    @include grid-media($desktop--grid) {
+      display: inline;
+    }
 
     &:first-child .tab-link {
       border-top-left-radius: $base-border-radius;
@@ -57,11 +62,11 @@
     padding: ($base-spacing / 2);
     text-decoration: none;
 
-    // @include media($tab-mode) {
-    //   @include border-top-radius($base-border-radius);
-    //   border-top: 0;
-    //   display: inline-block;
-    // }
+    @include grid-media($desktop--grid) {
+      @include border-top-radius($base-border-radius);
+      border-top: 0;
+      display: inline-block;
+    }
 
     &:hover {
       color: $action-color;
@@ -74,12 +79,12 @@
     @include mod('active') {
       background-color: $tab-active-background;
 
-      // @include media($tab-mode) {
-      //   background-color: $tab-active-background;
-      //   border: $tab-border;
-      //   border-bottom-color: $tab-active-background;
-      //   margin-bottom: -1px;
-      // }
+      @include grid-media($desktop--grid) {
+        background-color: $tab-active-background;
+        border: $tab-border;
+        border-bottom-color: $tab-active-background;
+        margin-bottom: -1px;
+      }
       + .accordion-tabs__content {
         display: flex;
       }
@@ -92,13 +97,13 @@
     padding: $base-spacing;
     width: 100%;
 
-    // @include media($tab-mode) {
-    //   border: $tab-border;
-    //   border-bottom-left-radius: $base-border-radius;
-    //   border-bottom-right-radius: $base-border-radius;
-    //   border-top-right-radius: $base-border-radius;
-    //   float: left;
-    // }
+    @include grid-media($desktop--grid) {
+      border: $tab-border;
+      border-bottom-left-radius: $base-border-radius;
+      border-bottom-right-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      float: left;
+    }
   }
 
 

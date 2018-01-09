@@ -9,6 +9,9 @@ import {
 	offCanvasToggle,
 } from './ducks/offCanvas';
 
+import {
+	tabSelect
+} from './ducks/accordionTabs';
 
 class App extends Component {
 
@@ -16,7 +19,8 @@ class App extends Component {
 		console.log(this.props.openOffCanvas);
 		return (
 			<div className="App">
-				<AccordionTabs />
+				<AccordionTabs tabs={this.props.accordionTabs} selectHandler={this.props.tabSelect}/>
+			
 				<VerticalDotNav />
 				<OffCanvas visible={this.props.offCanvasOpen} />
 				<FadeScreen visible={this.props.offCanvasOpen} switchHandler={this.props.offCanvasToggle} />
@@ -41,17 +45,32 @@ class App extends Component {
 	}
 }
 
+const tabs = [
+	{
+		title: "Bombers",
+		content: "Not everyone’s a hypocrite. Some of us will pour one out for the late Flo Bjelke-Petersen, purely to send the old witch down to whatever level of hell currently plays host to the tormented shade of her unlamented husband, Sir Joh, the last of the hillbilly dictators.",
+		visible: false,		
+	},
+	{
+		title: "Magpies",
+		content: "If ever you needed another reason to stoke your contempt for the top hatted muppet currently impersonating a Prime Minister (spoiler, I know you don’t) Mycroft Trumble’s dewy eyed tweet in praise of Lady Flo this week was just the ticket.",
+		visible: true,		
+	}
+]
+
 const mapStateToProps = (state, props) => {
 	console.log(state, props);
 	return {
 		offCanvasOpen: state.offCanvas.offCanvasOpen,
 		loading: state.loading,
+		accordionTabs: state.accordionTabs
 	};
 };
 
 const mapDispatchToProps = (dispatch) => {
 	return {
 		offCanvasToggle: () => dispatch(offCanvasToggle()),
+		tabSelect: (tab) => dispatch(tabSelect(tab)),
 	};
 };
 
