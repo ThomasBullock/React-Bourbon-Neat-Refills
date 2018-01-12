@@ -7,3 +7,5 @@ export * from './Parallax';
 export * from './SearchBar';
 export * from './Switch';
 export * from './VerticalDotNav';
+export * from './VerticalTabs';
+export * from './Modal';

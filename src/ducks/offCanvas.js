@@ -12,11 +12,14 @@ const initialState = {
 const offCanvas = (state = initialState, action) => {
   switch (action.type) {
    	case OFFCANVAS_TOGGLE:
-   		console.log('opening')
-      // clone the state // Object.assign(state, {offCanvasOpen: true}) doesn't work!
-      var newState = Object.assign({}, state);
-      newState.offCanvasOpen = !newState.offCanvasOpen;
-      return newState;
+      return Object.assign({}, state, {
+        offCanvasOpen: !state.offCanvasOpen
+      });    
+   		// console.log('opening')
+     //  // clone the state // Object.assign(state, {offCanvasOpen: true}) doesn't work!
+     //  var newState = Object.assign({}, state);
+     //  newState.offCanvasOpen = !newState.offCanvasOpen;
+     //  return newState;
 
     // case OFFCANVAS_CLOSE:
     //   return Object.assign(state, {offCanvasOpen: false});

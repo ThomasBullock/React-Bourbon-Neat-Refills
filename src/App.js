@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './styles/css/styles.css';
-import { Switch, OffCanvas, FadeScreen, AccordionTabs, VerticalDotNav, FullPageSection } from './components/common';
+import { Switch, OffCanvas, FadeScreen, AccordionTabs, VerticalDotNav, FullPageSection, VerticalTabs } from './components/common';
 
 import { connect } from 'react-redux';
 
@@ -16,11 +16,9 @@ import {
 class App extends Component {
 
 	render() {
-		console.log(this.props.openOffCanvas);
 		return (
 			<div className="App">
 				<AccordionTabs tabs={this.props.accordionTabs} selectHandler={this.props.tabSelect}/>
-			
 				<VerticalDotNav />
 				<OffCanvas visible={this.props.offCanvasOpen} />
 				<FadeScreen visible={this.props.offCanvasOpen} switchHandler={this.props.offCanvasToggle} />
@@ -35,6 +33,7 @@ class App extends Component {
 				<FullPageSection>
 					<h1>Yo Me Section</h1>
 					<Switch switchHandler={this.props.offCanvasToggle} />
+					<VerticalTabs />
 				</FullPageSection>
 				<FullPageSection>
 					<h1>Yo Me Section</h1>
@@ -63,7 +62,7 @@ const mapStateToProps = (state, props) => {
 	return {
 		offCanvasOpen: state.offCanvas.offCanvasOpen,
 		loading: state.loading,
-		accordionTabs: state.accordionTabs
+		accordionTabs: state.accordionTabs,
 	};
 };
 
